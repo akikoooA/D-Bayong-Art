@@ -2,9 +2,18 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>D Bayong</title>
+    <title>D'Bayong Art</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="logo (2).png" type="image/png">
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D'Bayong Art - Your Daily Bayong Buddy</title>
+    <meta name="description" content="One of a kind art pieces in our export quality pandan made bayong bags.">
+    <meta property="og:title" content="D'Bayong Art - Your Daily Bayong Buddy">
+    <meta property="og:description" content="Unique and One of its Kind art pieces in our export quality pandan made bayong bags.">
+    <meta property="og:image" content="images/your-preview-image.jpg"> <meta property="og:url" content="https://d-bayong-art.github.io/D-Bayong-Art/"> <link rel="stylesheet" href="style.css">
+</head>
     <style>
         * {
             margin: 0;
@@ -132,6 +141,71 @@
             color: #222;
             text-align: left;
             letter-spacing: -0.02em;
+        }
+
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column; /* Stack logo and navigation */
+                align-items: center; /* Center items horizontally */
+                padding: 15px 20px; /* Adjust padding */
+                justify-content: center; /* Center content vertically */
+            }
+
+            .logo-area {
+                margin-bottom: 15px; /* Add space below the logo */
+                margin-right: 0; /* Remove right margin */
+                text-align: center; /* Center the logo elements */
+            }
+
+            .nav-links {
+                flex-direction: column; /* Stack navigation links */
+                gap: 10px; /* Add space between links */
+                text-align: center; /* Center the links */
+                width: 100%; /* Make links take full width */
+            }
+
+            .main-content {
+                height: auto; /* Adjust height for content flow */
+                padding-top: 50px; /* Adjust top padding to avoid overlap */
+                align-items: center; /* Center content horizontally */
+                text-align: center; /* Center text within main content */
+            }
+
+            .circle-overlay {
+                position: relative; /* Adjust positioning context */
+                top: auto; /* Reset top */
+                right: auto; /* Reset right */
+                width: 70%; /* Adjust width of the circular image */
+                margin: 20px auto; /* Center the image */
+                height: auto; /* Adjust height automatically */
+            }
+
+            .description-container {
+                position: relative; /* Adjust positioning context */
+                top: auto; /* Reset top */
+                left: auto; /* Reset left */
+                width: 90%; /* Adjust width of the description container */
+                margin: 20px auto; /* Center the container */
+                text-align: center; /* Center text within the container */
+                padding: 20px; /* Adjust padding */
+            }
+
+            .description-title {
+                font-size: 2.5em; /* Adjust font size for mobile */
+                text-align: center; /* Center the title */
+            }
+
+            .description-text {
+                font-size: 1.2em; /* Further adjust text size for mobile */
+                text-align: center; /* Center the text */
+                margin-bottom: 1em; /* Adjust bottom margin */
+            }
+
+            .get-in-touch-button {
+                padding: 15px 30px; /* Adjust button padding */
+                font-size: 1.2em; /* Adjust button font size */
+                margin-top: 20px; /* Adjust top margin */
+            }
         }
 
         .description-text {
@@ -297,7 +371,7 @@
         /* Contact Us Section Styles */
         .contact-us-section {
             background-color: #f8f4f0;
-            padding: 80px 40px;  /* Increased padding for prominence */
+            padding: 80px 40px;     /* Increased padding for prominence */
             text-align: center;
             border-top: 2px solid #e0dad3; /* Added border for separation */
             margin-top: 60px; /* Added margin to create space */
@@ -353,113 +427,12 @@
         .contact-social a:hover {
             color: #e5c12f;
         }
-
-
-        @media (max-width: 768px) {
-            .navbar {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-
-            .logo-area {
-                margin-bottom: 20px;
-                margin-right: 0;
-            }
-
-            .nav-links {
-                flex-direction: column;
-                gap: 10px;
-            }
-
-            .main-content {
-                height: auto;
-            }
-
-            .circle-overlay {
-                top: 10%;
-                right: 0;
-                width: 80%;
-                height: 80%;
-            }
-
-            .description-container {
-                position: relative;
-                top: auto;
-                left: auto;
-                width: 90%;
-                margin: 20px auto;
-                text-align: center;
-            }
-
-            .description-title {
-                font-size: 3em;
-            }
-
-            .description-text {
-                font-size: 1.5em;
-            }
-
-            .category-section {
-                flex-direction: column;
-                text-align: center;
-                padding: 60px 20px;
-            }
-
-            .category-text {
-                width: 100%;
-                margin-bottom: 30px;
-                margin-right: 0;
-            }
-
-            .categories-title {
-                font-size: 3.5em;
-                letter-spacing: 0.03em;
-                text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.05);
-            }
-
-            .categories-description {
-                font-size: 1.2em;
-                letter-spacing: 0.01em;
-            }
-
-            .category-images {
-                width: 100%;
-                justify-content: center;
-                overflow-x: auto;
-                padding-bottom: 10px;
-                gap: 15px;
-            }
-
-            .image-container {
-                width: auto;
-                height: auto;
-                min-width: 200px;
-                max-height: 320px;
-                margin-bottom: 20px;
-            }
-
-            .bag-image {
-                max-height: 320px;
-            }
-
-            .artworks-title {
-                font-size: 3.5em;
-            }
-
-            .artworks-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .contact-us-title{
-                font-size: 3em;
-            }
-        }
     </style>
 </head>
 <body>
     <header class="navbar">
         <div class="logo-area">
-            <img src="logo.png" alt="Logo">
+            <img src="logo (2).png" alt="Logo">
             <span class="logo-text">D'Bayong Art</span>
         </div>
         <nav class="nav-links">
@@ -477,8 +450,8 @@
         <div class="description-container">
             <h2 class="description-title">Carry a Masterpiece</h2>
             <p class="description-text">
-                Elevate your style with our handcrafted Bayong bags, <br>
-                where artistry meets everyday elegance.
+                One of a kind art pieces in our export quality  <br>
+                pandan made bayong bags.
             </p>
             <button class="get-in-touch-button">GET IN TOUCH</button>
         </div>
@@ -503,9 +476,6 @@
             </div>
             <div class="image-container">
                 <img src="category3.png" alt="Bayong Bag 5" class="bag-image">
-            </div>
-            <div class="image-container">
-                <img src="category4.png" alt="Bayong Bag 6" class="bag-image">
             </div>
         </div>
     </section>
