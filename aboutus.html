@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>About Us - D'Bayong Art</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body, html {
+            height: 100%;
+            font-family: 'Merriweather', serif;
+            background-color: #f8f4f0;
+            scroll-behavior: smooth;
+        }
+
+        /* Navbar Styles */
+        .navbar {
+            width: 100%;
+            padding: 20px 40px;
+            background-color: transparent;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 10;
+            height: auto;
+            flex-wrap: nowrap;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            margin-right: 0;
+            margin-left: 0;
+        }
+
+        .logo-area img {
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+        }
+
+        .logo-text {
+            font-size: 28px;
+            font-family: 'Merriweather', serif;
+            color: black;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            justify-content: flex-start;
+            margin-top: 0;
+            flex-wrap: nowrap;
+            padding-left: 0;
+            width: 100%;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: black;
+            font-family: 'Merriweather', serif;
+            font-weight: 400;
+            padding: 10px 20px;
+            text-transform: uppercase;
+            display: block;
+            width: 100%;
+            text-align: left;
+        }
+
+        .nav-links a:hover {
+            color: #f4d03f;
+            background-color: #f8f4f0;
+        }
+
+        .about-us-section {
+            padding: 80px 40px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 80px;
+            margin-left: 0;
+            width: 100%;
+        }
+
+        .about-us-title {
+            font-size: 4em;
+            font-family: 'Playfair Display', serif;
+            font-weight: 900;
+            color: #2c3e50;
+            margin-bottom: 40px;
+            letter-spacing: 0.05em;
+            text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.05);
+            text-align: center;
+        }
+
+        .about-us-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+            gap: 20px;
+            max-width: 80%;
+        }
+
+        .about-us-text {
+            font-size: 1.2em;
+            color: #555;
+            line-height: 1.7;
+            text-align: center;
+        }
+
+        .about-us-mission-vision {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 40px;
+            width: 100%;
+            flex-wrap: wrap;
+        }
+
+        .about-us-mission, .about-us-vision {
+            width: 400px;
+            padding: 30px;
+            background-color: #f5f0e1;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.08);
+            border: 1px solid #e0dad3;
+        }
+
+        .about-us-mission h3, .about-us-vision h3 {
+            font-size: 1.5em;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+        }
+
+        .about-us-mission p, .about-us-vision p {
+            font-size: 1.1em;
+            color: #555;
+            line-height: 1.7;
+        }
+
+        /* Media query for screens larger than 768px (tablets and desktops) */
+        @media (min-width: 769px) {
+            .navbar {
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+            }
+
+            .nav-links {
+                flex-direction: row;
+                justify-content: flex-end;
+                width: auto;
+            }
+
+            .nav-links a {
+                display: inline-block;
+                width: auto;
+                text-align: center;
+            }
+             .logo-area {
+                margin-bottom: 0;
+                margin-right: auto;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .navbar {
+                width: 100%;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+                height: auto;
+                padding: 10px 20px;
+            }
+
+            .logo-area {
+                margin-bottom: 0;
+                margin-left: 0;
+            }
+
+            .nav-links {
+                flex-direction: row;
+                gap: 10px;
+                margin-top: 0;
+                padding-left: 0;
+                width: auto;
+            }
+
+            .nav-links a {
+                display: inline-block;
+                width: auto;
+                text-align: center;
+                padding: 10px 15px;
+            }
+
+            .about-us-section {
+                margin-left: 0;
+                width: 100%;
+                padding: 60px 20px;
+            }
+
+            .about-us-title {
+                font-size: 3.5em;
+            }
+
+            .about-us-content {
+                gap: 15px;
+            }
+
+            .about-us-text {
+                font-size: 1.1em;
+            }
+
+            .about-us-mission-vision {
+                flex-direction: column;
+                align-items: center;
+                gap: 30px;
+            }
+
+            .about-us-mission, .about-us-vision {
+                width: 90%;
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo-area">
+            <img src="logo.png" alt="Logo">
+            <span class="logo-text">D'Bayong Art</span>
+        </div>
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="aboutus.html">About Us</a>
+            <a href="index.html#artworks-section">Collection</a>
+            <a href="index.html#contact-us-section">Contact Us</a>
+        </nav>
+    </header>
+    <section class="about-us-section">
+        <h2 class="about-us-title">About Us</h2>
+        <div class="about-us-content">
+            <p class="about-us-text">
+                D'Bayong Art is a passionate endeavor dedicated to preserving and elevating the traditional Filipino craft of Bayong making. We believe in the beauty and functionality of handcrafted items, and we strive to bring this artistry to a wider audience. Each Bayong bag we create is a testament to the skill and creativity of our artisans, blending traditional techniques with contemporary designs.
+            </p>
+            <p class="about-us-text">
+                Our journey began with a deep appreciation for the cultural heritage embedded in every weave. We are committed to sustainable practices, using locally sourced materials and empowering our community of artisans. With every Bayong you carry, you're not just carrying a bag, but a piece of Filipino artistry and a story of tradition and transformation.
+            </p>
+        </div>
+        <div class="about-us-mission-vision">
+            <div class="about-us-mission">
+                <h3>Our Mission</h3>
+                <p>
+                    To preserve and promote the art of Bayong making, empowering local artisans and celebrating Filipino craftsmanship through sustainable and innovative designs.
+                </p>
+            </div>
+            <div class="about-us-vision">
+                <h3>Our Vision</h3>
+                <p>
+                    To be a globally recognized brand that showcases the beauty and versatility of Bayong bags, while fostering cultural appreciation and sustainable livelihoods.
+                </p>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

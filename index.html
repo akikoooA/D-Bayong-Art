@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>D Bayong</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body, html {
+            height: 100%;
+            font-family: 'Merriweather', serif;
+            background-color: #f8f4f0;
+            scroll-behavior: smooth;
+        }
+
+        /* Navbar Styles */
+        .navbar {
+            width: 100%;
+            padding: 20px 40px;
+            background-color: transparent;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 10;
+            height: auto;
+            flex-wrap: wrap;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0;
+            margin-right: 120px;
+        }
+
+        .logo-area img {
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+        }
+
+        .logo-text {
+            font-size: 28px;
+            font-family: 'Merriweather', serif;
+            color: black;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            justify-content: flex-start;
+            margin-top: 0;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: black;
+            font-family: 'Merriweather', serif;
+            font-weight: 400;
+            padding: 10px 15px;
+            text-transform: uppercase;
+        }
+
+        .nav-links a:hover {
+            color: #f4d03f;
+        }
+
+        /* Main Content Styles */
+        .main-content {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            background-image: url('Background.png');
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .circle-overlay {
+            position: absolute;
+            top: 2.5%;
+            right: 0;
+            width: 55%;
+            height: 95%;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+
+        .circle-overlay img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .description-container {
+            position: absolute;
+            top: 25%;
+            left: 5%;
+            width: 70%;
+            color: #333;
+            font-size: 1.1em;
+            line-height: 1.4;
+            padding: 20px;
+            border-radius: 15px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            background-color: transparent;
+        }
+
+        .description-title {
+            font-size: 4em;
+            font-family: 'Merriweather', serif;
+            font-weight: 700;
+            margin-bottom: 0.1em;
+            color: #222;
+            text-align: left;
+            letter-spacing: -0.02em;
+        }
+
+        .description-text {
+            font-size: 2em;
+            text-align: left;
+            margin-bottom: 0.5em;
+        }
+
+        .get-in-touch-button {
+            background-color: #f4d03f;
+            padding: 20px 40px;
+            border: none;
+            border-radius: 30px;
+            margin-top: 30px;
+            font-size: 1.5em;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .get-in-touch-button:hover {
+            background-color: #e5c12f;
+        }
+
+        /* Categories Section Styles */
+        .category-section {
+            display: flex;
+            flex-direction: column; /* Changed to column */
+            align-items: center; /* Center items horizontally */
+            padding: 80px 40px;
+            background-color: #f5f0e1;
+            overflow: hidden;
+            border-bottom: 1px solid #e0dad3;
+            text-align: center; /* Center text within the section */
+        }
+
+        .category-text {
+            width: 100%; /* Full width for the text container */
+            text-align: center; /* Center the text */
+            order: 1; /* Ensure text is displayed first */
+            margin-bottom: 30px; /* Add margin below the text */
+        }
+
+        .categories-title {
+            font-size: 4.5em;
+            font-family: 'Playfair Display', serif;
+            font-weight: 900;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            line-height: 1;
+            letter-spacing: 0.05em;
+            text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.05);
+        }
+
+        .categories-description {
+            font-size: 1.25em;
+            font-family: 'Merriweather', serif;
+            color: #555;
+            line-height: 1.6;
+            letter-spacing: 0.015em;
+        }
+
+        .category-images {
+            display: flex;
+            flex-wrap: nowrap;
+            justify-content: center; /* Center images horizontally */
+            width: 100%; /* Full width for images container */
+            gap: 20px;
+            overflow-x: auto;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+            align-self: center;
+            padding-bottom: 10px;
+            order: 2;
+        }
+
+        .category-images::-webkit-scrollbar {
+            display: none;
+        }
+
+        .image-container {
+            width: auto;
+            height: auto;
+            min-width: 180px;
+            max-height: 300px;
+            overflow: hidden;
+            background-color: #f9f9f9;
+            border-radius: 12px;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            border: 1px solid #e0e0e0;
+        }
+
+        .image-container:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .bag-image {
+            display: block;
+            width: auto;
+            max-width: 100%;
+            height: auto;
+            max-height: 300px;
+            object-fit: contain;
+        }
+
+        .image-container:hover .bag-image {
+            opacity: 0.9;
+        }
+
+        /* Artworks Section Styles */
+        .artworks-section {
+            padding: 80px 40px;
+            text-align: center;
+        }
+
+        .artworks-title {
+            font-size: 4em;
+            font-family: 'Playfair Display', serif;
+            font-weight: 900;
+            color: black;
+            margin-bottom: 40px;
+            letter-spacing: 0.05em;
+            text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.05);
+            text-align: center;
+        }
+
+        .artworks-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .artwork-container {
+            width: 100%;
+            height: 0;
+            padding-bottom: 100%;
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            border: 1px solid #d3cbb6;
+        }
+
+        .artwork-container:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .artwork-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 8px;
+            filter: sepia(10%);
+        }
+
+        /* Contact Us Section Styles */
+        .contact-us-section {
+            background-color: #f8f4f0;
+            padding: 80px 40px;  /* Increased padding for prominence */
+            text-align: center;
+            border-top: 2px solid #e0dad3; /* Added border for separation */
+            margin-top: 60px; /* Added margin to create space */
+        }
+
+        .contact-us-title {
+            font-size: 3.5em; /* Increased font size */
+            font-family: 'Playfair Display', serif;
+            font-weight: 900;
+            color: #2c3e50;
+            margin-bottom: 30px; /* Increased margin */
+            letter-spacing: 0.05em;
+            text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.05);
+        }
+
+        .contact-us-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 30px; /* Increased margin */
+            gap: 20px; /* Increased gap */
+        }
+
+        .contact-us-text {
+            font-size: 1.2em; /* Increased font size */
+            color: #555;
+            line-height: 1.7; /* Increased line height for better readability */
+            max-width: 800px; /* Added max width for wider screens */
+            margin-bottom: 15px;
+        }
+
+        .contact-info {
+            font-size: 1.3em; /* Increased font size */
+            font-weight: 700;
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .contact-social {
+            display: flex;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .contact-social a {
+            text-decoration: none;
+            color: #f4d03f;
+            font-size: 2em; /* Increased font size */
+            transition: color 0.3s ease;
+        }
+
+        .contact-social a:hover {
+            color: #e5c12f;
+        }
+
+
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .logo-area {
+                margin-bottom: 20px;
+                margin-right: 0;
+            }
+
+            .nav-links {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .main-content {
+                height: auto;
+            }
+
+            .circle-overlay {
+                top: 10%;
+                right: 0;
+                width: 80%;
+                height: 80%;
+            }
+
+            .description-container {
+                position: relative;
+                top: auto;
+                left: auto;
+                width: 90%;
+                margin: 20px auto;
+                text-align: center;
+            }
+
+            .description-title {
+                font-size: 3em;
+            }
+
+            .description-text {
+                font-size: 1.5em;
+            }
+
+            .category-section {
+                flex-direction: column;
+                text-align: center;
+                padding: 60px 20px;
+            }
+
+            .category-text {
+                width: 100%;
+                margin-bottom: 30px;
+                margin-right: 0;
+            }
+
+            .categories-title {
+                font-size: 3.5em;
+                letter-spacing: 0.03em;
+                text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.05);
+            }
+
+            .categories-description {
+                font-size: 1.2em;
+                letter-spacing: 0.01em;
+            }
+
+            .category-images {
+                width: 100%;
+                justify-content: center;
+                overflow-x: auto;
+                padding-bottom: 10px;
+                gap: 15px;
+            }
+
+            .image-container {
+                width: auto;
+                height: auto;
+                min-width: 200px;
+                max-height: 320px;
+                margin-bottom: 20px;
+            }
+
+            .bag-image {
+                max-height: 320px;
+            }
+
+            .artworks-title {
+                font-size: 3.5em;
+            }
+
+            .artworks-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-us-title{
+                font-size: 3em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo-area">
+            <img src="logo.png" alt="Logo">
+            <span class="logo-text">D'Bayong Art</span>
+        </div>
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="aboutus.html">About Us</a>
+            <a href="#artworks-section">Collection</a>
+            <a href="#contact-us-section">Contact Us</a>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <div class="circle-overlay">
+            <img src="your-circular-image.png" alt="Bayong Product">
+        </div>
+        <div class="description-container">
+            <h2 class="description-title">Carry a Masterpiece</h2>
+            <p class="description-text">
+                Elevate your style with our handcrafted Bayong bags, <br>
+                where artistry meets everyday elegance.
+            </p>
+            <button class="get-in-touch-button">GET IN TOUCH</button>
+        </div>
+    </main>
+
+    <section class="category-section">
+        <div class="category-text">
+            <h2 class="categories-title">Categories</h2>
+            <p class="categories-description">
+                Browse our thoughtfully curated collection of Bayong bags, each with its unique charm and story. Discover the perfect piece to complement your style.
+            </p>
+        </div>
+        <div class="category-images">
+            <div class="image-container">
+                <img src="category.png" alt="Bayong Bag 2" class="bag-image">
+            </div>
+            <div class="image-container">
+                <img src="category1.png" alt="Bayong Bag 3" class="bag-image">
+            </div>
+            <div class="image-container">
+                <img src="category2.png" alt="Bayong Bag 4" class="bag-image">
+            </div>
+            <div class="image-container">
+                <img src="category3.png" alt="Bayong Bag 5" class="bag-image">
+            </div>
+            <div class="image-container">
+                <img src="category4.png" alt="Bayong Bag 6" class="bag-image">
+            </div>
+        </div>
+    </section>
+
+    <section id="artworks-section" class="artworks-section">
+        <h2 class="artworks-title">Handcrafted Elegance: Explore D'Bayong Bags</h2>
+        <div class="artworks-grid">
+            <div class="artwork-container">
+                <img src="1.png" alt="Artwork 1" class="artwork-image">
+            </div>
+            <div class="artwork-container">
+                <img src="2.png" alt="Artwork 2" class="artwork-image">
+            </div>
+            <div class="artwork-container">
+                <img src="3.png" alt="Artwork 3" class="artwork-image">
+            </div>
+            <div class="artwork-container">
+                <img src="4.png" alt="Artwork 4" class="artwork-image">
+            </div>
+            <div class="artwork-container">
+                <img src="5.png" alt="Artwork 5" class="artwork-image">
+            </div>
+            <div class="artwork-container">
+                <img src="6.png" alt="Artwork 6" class="artwork-image">
+            </div>
+            <div class="artwork-container">
+                <img src="7.png" alt="Artwork 7" class="artwork-image">
+            </div>
+            <div class="artwork-container">
+                <img src="8.png" alt="Artwork 8" class="artwork-image">
+            </div>
+            <div class="artwork-container">
+                <img src="9.png" alt="Artwork 9" class="artwork-image">
+            </div>
+        </div>
+    </section>
+
+    <section id="contact-us-section" class="contact-us-section">
+        <h2 class="contact-us-title">Contact Us</h2>
+        <div class="contact-us-content">
+            <p class="contact-us-text">
+                For inquiries, collaborations, or custom orders, please reach out to us using the following details:
+            </p>
+            <p class="contact-info">
+                <strong>Email:</strong> derickzamora36@gmail.com<br>
+                <strong>Facebook:</strong> <a href="https://www.facebook.com/DBayongArt" target="_blank" rel="noopener noreferrer">D'Bayong Art</a><br>
+                <strong>Location:</strong> Bacolod City, Negros Occidental
+            </p>
+            <p class="contact-us-text">
+                We specialize in unique handcrafted Bayong bags and look forward to hearing from you.
+            </p>
+        </div>
+    </section>
+
+</body>
+</html>
