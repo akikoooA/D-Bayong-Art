@@ -13,7 +13,6 @@
     <meta property="og:title" content="D'Bayong Art - Your Daily Bayong Buddy">
     <meta property="og:description" content="Unique and One of its Kind art pieces in our export quality pandan made bayong bags.">
     <meta property="og:image" content="images/your-preview-image.jpg"> <meta property="og:url" content="https://d-bayong-art.github.io/D-Bayong-Art/"> <link rel="stylesheet" href="style.css">
-</head>
     <style>
         * {
             margin: 0;
@@ -35,20 +34,20 @@
             background-color: transparent;
             display: flex;
             align-items: center;
-            justify-content: flex-start;
+            justify-content: flex-start; /* Align items to the left */
             position: absolute;
             top: 0;
             left: 0;
             z-index: 10;
             height: auto;
-            flex-wrap: wrap;
+            flex-wrap: wrap; /* For mobile responsiveness */
         }
 
         .logo-area {
             display: flex;
-            align-items: center;
+            align-items: center; /* Vertically align logo and text */
             margin-bottom: 0;
-            margin-right: 120px;
+            margin-right: 20px; /* Add space between logo area and nav */
         }
 
         .logo-area img {
@@ -63,14 +62,14 @@
             color: black;
             font-weight: 700;
             letter-spacing: 1px;
+            margin-right: 20px; /* Add space between logo text and nav */
         }
 
         .nav-links {
-            display: flex;
-            gap: 20px;
-            justify-content: flex-start;
+            display: flex; /* Arrange links horizontally */
+            gap: 20px; /* Space between links */
             margin-top: 0;
-            flex-wrap: wrap;
+            flex-wrap: wrap; /* For mobile responsiveness */
         }
 
         .nav-links a {
@@ -143,12 +142,13 @@
             letter-spacing: -0.02em;
         }
 
-      @media (max-width: 768px) {
+        @media (max-width: 768px) {
             .navbar {
                 flex-direction: column; /* Stack logo and navigation */
                 align-items: center; /* Center items horizontally */
                 padding: 15px 20px; /* Adjust padding */
-                justify-content: center; /* Center content vertically */
+                justify-content: flex-start; /* Align items to the top */
+                background-color: rgba(248, 244, 240, 0.95); /* Add a semi-transparent background */
             }
 
             .logo-area {
@@ -158,15 +158,27 @@
             }
 
             .nav-links {
-                flex-direction: column; /* Stack navigation links */
+                display: flex;
+                flex-direction: column; /* Stack navigation links vertically */
                 gap: 10px; /* Add space between links */
                 text-align: center; /* Center the links */
                 width: 100%; /* Make links take full width */
+                margin-top: 15px; /* Add some top margin to separate from the logo */
+            }
+
+            .nav-links a {
+                display: block; /* Make each link take full width for easier tapping */
+                padding: 10px 0; /* Adjust vertical padding, remove horizontal */
+                border-bottom: 1px solid #eee; /* Add a subtle separator */
+            }
+
+            .nav-links a:last-child {
+                border-bottom: none; /* Remove the bottom border from the last link */
             }
 
             .main-content {
                 height: auto; /* Adjust height for content flow */
-                padding-top: 50px; /* Adjust top padding to avoid overlap */
+                padding-top: 120px; /* Adjust top padding to accommodate the navigation */
                 align-items: center; /* Center content horizontally */
                 text-align: center; /* Center text within main content */
             }
@@ -188,6 +200,7 @@
                 margin: 20px auto; /* Center the container */
                 text-align: center; /* Center text within the container */
                 padding: 20px; /* Adjust padding */
+                background-color: rgba(248, 244, 240, 0.8); /* Keep a semi-transparent background */
             }
 
             .description-title {
@@ -210,6 +223,7 @@
             }
         }
         
+
 
         .description-text {
             font-size: 2em;
@@ -424,7 +438,7 @@
             text-decoration: none;
             color: #f4d03f;
             font-size: 2em; /* Increased font size */
-            transition: color 0.3s ease;
+            transition: color
         }
 
         .contact-social a:hover {
@@ -453,8 +467,8 @@
         <div class="description-container">
             <h2 class="description-title">Carry a Masterpiece</h2>
             <p class="description-text">
-                One of a kind art pieces in our export quality  <br>
-                pandan made bayong bags.
+            Handcrafted, export quality pandan bayong bags.<br>
+              
             </p>
             <button class="get-in-touch-button">GET IN TOUCH</button>
         </div>
