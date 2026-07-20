@@ -1,0 +1,1471 @@
+/* =========================================================
+   D'Bayong Art — Stylesheet
+   Organized by section. Uses CSS custom properties for
+   consistent theming and easy edits.
+
+   TABLE OF CONTENTS
+   1.  Reset & Base
+   2.  Header / Navigation
+   3.  Hero Section
+   4.  Generic Section / Card Styles
+   5.  About Page — Story Section
+   6.  Collection / Product Grid (#collection)
+   7.  About Us — Philosophy Showcase
+   8.  Contact & Footer
+   9.  Accessibility
+   ========================================================= */
+
+:root {
+    /* -- Core theme (site-wide) -- */
+    --primary-color: #8B5A3C;
+    --primary-dark: #6B4423;
+    --accent-light: #FEF3E2;
+    --accent-light-2: #F7E6D3;
+    --accent-gold: #D4A94C; /* used sparingly: quote mark + eyebrow labels */
+    --text-dark: #1a202c;
+    --text-light: #4a5568;
+    --border-color: rgba(229, 231, 235, 0.3);
+    --bg-white: #ffffff;
+    --bg-soft: #f8fafc;
+    --transition-default: all 0.3s ease;
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Inter', sans-serif;
+    --header-height: 85px;
+
+    /* -- Collection / gallery sub-theme (#collection section only) -- */
+    --collection-ink: #4A3324;
+    --collection-text: #7A6A54;
+    --collection-muted: #9C8A6F;
+    --collection-accent: #A85B32;
+    --collection-border: #E4D6BC;
+    --collection-border-strong: #C9A86A;
+    --collection-bg: #FBF7EF;
+    --collection-stripe: #D8C4A0;
+
+    /* -- Philosophy showcase sub-theme (aboutus.html) -- */
+    --ph-bg: #fffaf3;
+    --ph-border: #e8d9c5;
+    --ph-image-bg: #e9dcc7;
+    --ph-panel-start: #3a2a1c;
+    --ph-panel-end: #2b1d12;
+    --ph-text: #f5ead9;
+    --ph-sub: #e6d8c4;
+    --ph-gold: #d4a560;
+}
+
+/* =========================================================
+   1. Reset & Base
+   ========================================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: #fefefe;
+    line-height: 1.7;
+    color: var(--text-dark);
+    overflow-x: hidden;
+}
+
+/* Anchored sections sit below the sticky header instead of being hidden by it */
+#home, #about, #collection, #contact {
+    scroll-margin-top: var(--header-height);
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+/* =========================================================
+   2. Header / Navigation
+   ========================================================= */
+.header {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border-color);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    transition: var(--transition-default);
+}
+
+.header.scrolled {
+    background: rgba(255, 255, 255, 0.98);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: var(--header-height);
+}
+
+.logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.15rem;
+    min-width: 0;
+}
+
+.logo-circle {
+    width: 80px;
+    height: 80px;
+    background: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(254, 243, 226, 0.4);
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.logo-circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    padding: 0;
+}
+
+.logo-text {
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    font-family: var(--font-heading);
+    letter-spacing: -0.02em;
+    white-space: nowrap;
+}
+
+.nav {
+    display: flex;
+    gap: 2.5rem;
+}
+
+.nav-link {
+    color: var(--text-light);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    letter-spacing: 0.02em;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover,
+.nav-link:focus-visible {
+    color: var(--primary-color);
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background: linear-gradient(90deg, var(--primary-color), var(--accent-light));
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after,
+.nav-link:focus-visible::after {
+    width: 100%;
+}
+
+/* Marks the current page in the nav (used by aboutus.html) */
+.nav-link.active-page {
+    color: var(--primary-color);
+}
+
+.nav-link.active-page::after {
+    width: 100%;
+}
+
+.mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    flex-shrink: 0;
+}
+
+/* Hide mobile nav by default */
+.mobile-nav {
+    display: none;
+    flex-direction: column;
+    background-color: #ffffff;
+    padding: 1rem 2rem;
+    border-top: 1px solid #eee;
+}
+
+/* Show mobile nav when active class is added by JS */
+.mobile-nav.active {
+    display: flex;
+}
+
+/* Base style for mobile links */
+.mobile-nav-link {
+    display: block;
+    padding: 0.75rem 0;
+    color: var(--primary-color);
+    text-decoration: none;
+    font-family: var(--font-body);
+    font-weight: 500;
+}
+
+.mobile-nav-link:hover {
+    color: var(--primary-dark);
+}
+
+/* Safety net: force every link inside the mobile nav to match,
+   even if a link accidentally keeps the desktop .nav-link class */
+.mobile-nav .nav-link,
+.mobile-nav .mobile-nav-link {
+    display: block;
+    padding: 0.75rem 0;
+    color: var(--primary-color);
+    text-decoration: none;
+    font-family: var(--font-body);
+    font-weight: 500;
+    font-size: 1rem;
+    letter-spacing: normal;
+}
+
+.mobile-nav .nav-link:hover,
+.mobile-nav .mobile-nav-link:hover {
+    color: var(--primary-dark);
+}
+
+/* Kill the desktop underline-on-hover effect if nav-link sneaks in here */
+.mobile-nav .nav-link::after {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .nav {
+        display: none;
+    }
+
+    .mobile-menu-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .logo-circle {
+        width: 56px;
+        height: 56px;
+    }
+
+    .logo-text {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 360px) {
+    .logo-text {
+        font-size: 1.1rem;
+    }
+}
+/* =========================================================
+   3. Hero Section
+   ========================================================= */
+.hero {
+    position: relative;
+    min-height: calc(100vh - var(--header-height));
+    display: flex;
+    align-items: center;
+    background: linear-gradient(135deg, var(--accent-light) 0%, var(--accent-light-2) 25%, #ffffff 75%, var(--bg-soft) 100%);
+    overflow: hidden;
+}
+
+.hero-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+    width: 100%;
+    position: relative;
+    z-index: 2;
+    padding: 4rem 0;
+}
+
+.hero-text {
+    padding: 2rem 0;
+}
+
+.hero-subtitle {
+    font-size: 1rem;
+    color: var(--primary-color);
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    position: relative;
+    padding-left: 2rem;
+}
+
+.hero-subtitle::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1.5rem;
+    height: 2px;
+    background: linear-gradient(90deg, var(--primary-color), var(--accent-light));
+}
+
+.hero-title {
+    font-size: 4rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 2rem;
+    line-height: 1.1;
+    font-family: var(--font-heading);
+    letter-spacing: -0.02em;
+}
+
+.hero-description {
+    font-size: 1.2rem;
+    color: var(--text-light);
+    margin-bottom: 3rem;
+    line-height: 1.8;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.hero-btn-primary,
+.hero-btn-secondary {
+    padding: 1.2rem 2.5rem;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: var(--transition-default);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.hero-btn-primary {
+    background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
+    color: #ffffff;
+    border: none;
+    box-shadow: 0 8px 25px rgba(26, 32, 44, 0.2);
+}
+
+.hero-btn-primary:hover,
+.hero-btn-primary:focus-visible {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 35px rgba(26, 32, 44, 0.3);
+}
+
+.hero-btn-secondary {
+    background: transparent;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+}
+
+.hero-btn-secondary:hover,
+.hero-btn-secondary:focus-visible {
+    background: var(--primary-color);
+    color: #ffffff;
+    transform: translateY(-3px);
+    box-shadow: 0 15px 35px rgba(139, 90, 60, 0.3);
+}
+
+.hero-image {
+    width: 100%;
+    transition: var(--transition-default);
+}
+
+.hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 15%; /* Keeps the banner text and faces framed beautifully */
+    display: block;
+    border-radius: 12px; /* Smooth card edges matching your design aesthetic */
+}
+
+.hero-image:hover {
+    transform: scale(1.02);
+}
+
+.hero-badge {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    background: rgba(254, 243, 226, 0.95);
+    backdrop-filter: blur(10px);
+    color: var(--primary-color);
+    padding: 1rem 1.5rem;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+@media (max-width: 900px) {
+    .hero {
+        min-height: auto; /* Lets content dictate height naturally on mobile */
+    }
+
+    .hero-content {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+        padding: 2rem 0 4rem 0;
+    }
+
+    .hero-title {
+        font-size: 2.75rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .hero-image {
+        height: auto;
+        aspect-ratio: 4 / 3; /* Maintains standard framing proportions */
+        order: -1; /* Pushes the image above the text exactly like your screenshot */
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 2.25rem;
+    }
+
+    .hero-description {
+        font-size: 1.05rem;
+        margin-bottom: 2rem;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .hero-btn-primary,
+    .hero-btn-secondary {
+        justify-content: center;
+        width: 100%;
+    }
+}
+
+/* =========================================================
+   4. Generic Section / Card Styles
+   ========================================================= */
+.section {
+    padding: 4rem 0;
+}
+
+.section-gray {
+    background: linear-gradient(135deg, var(--bg-soft) 0%, #ffffff 100%);
+}
+
+.section-title {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    text-align: center;
+    margin-bottom: 2rem;
+    font-family: var(--font-heading);
+    letter-spacing: -0.02em;
+}
+
+.section-description {
+    font-size: 1.2rem;
+    color: var(--text-light);
+    text-align: center;
+    max-width: 50rem;
+    margin: 0 auto 3rem;
+    line-height: 1.8;
+}
+
+@media (max-width: 600px) {
+    .section-title {
+        font-size: 2.1rem;
+    }
+
+    .section-description {
+        font-size: 1.05rem;
+    }
+}
+
+.mission-vision {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2.5rem;
+    margin-top: 3rem;
+}
+
+.card {
+    background: linear-gradient(135deg, #ffffff 0%, var(--bg-soft) 100%);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    padding: 2.5rem;
+    transition: var(--transition-default);
+    position: relative;
+    overflow: hidden;
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-color), var(--accent-light));
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.card-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 1.5rem;
+    font-family: var(--font-heading);
+}
+
+.card-text {
+    color: var(--text-light);
+    line-height: 1.8;
+}
+
+/* Isolated Branding Philosophy Callout */
+.brand-philosophy-highlight {
+    position: relative;
+    margin: 2.5rem auto;
+    padding: 2.5rem 2.5rem 2.75rem;
+    max-width: 600px;
+    text-align: center;
+    background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
+    border-radius: 16px;
+    box-shadow: 0 20px 40px rgba(26, 32, 44, 0.25);
+    overflow: hidden;
+}
+
+.brand-philosophy-highlight::before {
+    content: '\201C';
+    position: absolute;
+    top: -0.25rem;
+    left: 1.5rem;
+    font-family: var(--font-heading);
+    font-size: 4.5rem;
+    color: var(--accent-gold);
+    opacity: 0.85;
+    line-height: 1;
+}
+
+.philosophy-label {
+    display: block;
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--accent-gold);
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+}
+
+.philosophy-motto {
+    display: block;
+    font-family: var(--font-heading);
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #ffffff;
+    line-height: 1.4;
+}
+
+@media (max-width: 768px) {
+    .brand-philosophy-highlight {
+        padding: 1.75rem 1.25rem 2rem;
+        margin: 2rem 0;
+    }
+    .philosophy-motto {
+        font-size: 1.35rem;
+    }
+}
+
+/* =========================================================
+   5. About Page — Story Section
+   ========================================================= */
+.about-page-container {
+    position: relative;
+    background: linear-gradient(180deg, var(--accent-light-2) 0%, transparent 420px);
+}
+
+.about-page-container::before {
+    content: "AUTHENTIC FILIPINO ARTISTRY";
+    display: block;
+    text-align: center;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.24em;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.about-page-container > section {
+    max-width: 760px;
+    margin: 0 auto;
+}
+
+/* =========================================================
+   6. Collection / Product Grid — Framed Gallery Layout
+   This is the single source of truth for .collection-grid,
+   .product-card, .product-image, .category-buttons, etc.
+   Do not redefine these in inline <style> blocks in the HTML —
+   duplicate rules elsewhere is what caused the mobile cropping bug.
+   ========================================================= */
+
+#collection {
+    padding: 6rem 0 7rem;
+}
+
+#collection .section-eyebrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    font-family: 'Work Sans', sans-serif;
+    font-size: 0.76rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--collection-accent);
+    margin-bottom: 1rem;
+}
+
+#collection .section-eyebrow::before,
+#collection .section-eyebrow::after {
+    content: '';
+    width: 26px;
+    height: 1px;
+    background: var(--collection-border-strong);
+}
+
+#collection .section-title {
+    font-family: 'Fraunces', var(--font-heading);
+    font-weight: 600;
+    color: var(--collection-ink);
+    letter-spacing: -0.01em;
+    text-align: center;
+    font-size: clamp(1.9rem, 3.6vw, 2.6rem);
+    margin-bottom: 0.9rem;
+}
+
+#collection .section-description {
+    font-family: 'Work Sans', sans-serif;
+    color: var(--collection-text);
+    text-align: center;
+    max-width: 560px;
+    margin: 0 auto 3rem;
+    line-height: 1.65;
+}
+
+/* ---------- Filter bar: animated underline tabs ---------- */
+
+.category-buttons {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+    border-bottom: 1px solid var(--collection-border);
+    margin: 0 auto 3.5rem;
+    max-width: 680px;
+}
+
+.category-btn {
+    position: relative;
+    font-family: 'Work Sans', sans-serif;
+    font-size: 0.88rem;
+    font-weight: 500;
+    color: var(--collection-muted);
+    background: transparent;
+    border: none;
+    padding: 0.85rem 1.1rem;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: color 0.25s ease;
+}
+
+.category-btn:hover {
+    color: var(--collection-ink);
+}
+
+.category-btn:focus-visible {
+    outline: 2px solid var(--collection-accent);
+    outline-offset: 2px;
+    border-radius: 3px;
+}
+
+.category-btn.active {
+    color: var(--collection-ink);
+    font-weight: 600;
+}
+
+/* Sliding indicator — positioned/sized by the script at the bottom of the HTML */
+.category-buttons .tab-indicator {
+    position: absolute;
+    bottom: -1px;
+    height: 2px;
+    background: var(--collection-accent);
+    border-radius: 2px;
+    transition: left 0.3s cubic-bezier(0.65, 0, 0.35, 1), width 0.3s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+/* ---------- Gallery grid ---------- */
+
+.collection-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 2.75rem 2rem;
+    width: 100%;
+}
+
+.product-card {
+    display: flex;
+    flex-direction: column;
+    min-width: 0; /* lets grid items shrink instead of overflowing on narrow screens */
+}
+
+/* Framed mat around the photo, like a gallery print.
+   aspect-ratio (not a fixed pixel height) is what keeps this
+   proportional and uncropped on every screen size. */
+.product-image {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    padding: 10px;
+    background: var(--collection-bg);
+    border: 1px solid var(--collection-border);
+    box-sizing: border-box;
+    overflow: hidden;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover .product-image {
+    border-color: var(--collection-accent);
+    box-shadow: 0 16px 32px rgba(74, 51, 36, 0.14);
+}
+
+.product-image > img,
+.product-image > .product-placeholder {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+}
+
+.product-image img {
+    transition: transform 0.6s ease;
+}
+
+.product-card:hover .product-image img {
+    transform: scale(1.04);
+}
+
+/* Hand-stitched corner mark — small diagonal ticks, bottom-right of the frame */
+.product-image::after {
+    content: '';
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    width: 16px;
+    height: 16px;
+    background-image:
+        linear-gradient(45deg, transparent 46%, var(--collection-accent) 46%, var(--collection-accent) 54%, transparent 54%),
+        linear-gradient(-45deg, transparent 46%, var(--collection-accent) 46%, var(--collection-accent) 54%, transparent 54%);
+    background-size: 6px 6px;
+    background-repeat: no-repeat;
+    background-position: bottom right, bottom right;
+    opacity: 0.55;
+    pointer-events: none;
+}
+
+.product-placeholder {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    background: repeating-linear-gradient(135deg, var(--collection-border), var(--collection-border) 10px, var(--collection-stripe) 10px, var(--collection-stripe) 20px);
+}
+
+.product-placeholder span {
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 500;
+    color: var(--collection-ink);
+    background: var(--collection-bg);
+    padding: 0.4rem 0.9rem;
+    border-radius: 4px;
+    font-size: 0.78rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+/* ---------- Card info ---------- */
+
+.product-info {
+    padding-top: 1.25rem;
+}
+
+.product-category {
+    font-family: 'Work Sans', sans-serif;
+    font-size: 0.7rem;
+    color: var(--collection-accent);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.5rem;
+}
+
+.product-title {
+    display: inline-block;
+    font-family: 'Fraunces', var(--font-heading);
+    font-weight: 600;
+    color: var(--collection-ink);
+    font-size: 1.15rem;
+    letter-spacing: -0.01em;
+    margin-bottom: 0.5rem;
+    position: relative;
+    padding-bottom: 4px;
+}
+
+.product-title::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 1px;
+    width: 0;
+    background: var(--collection-accent);
+    transition: width 0.35s ease;
+}
+
+.product-card:hover .product-title::after {
+    width: 100%;
+}
+
+.product-desc {
+    font-family: 'Work Sans', sans-serif;
+    color: var(--collection-text);
+    font-size: 0.92rem;
+    line-height: 1.6;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* ---------- Empty state ---------- */
+
+.category-container {
+    display: grid;
+}
+
+.category-container[hidden] {
+    display: none;
+}
+
+.category-empty {
+    font-family: 'Fraunces', var(--font-heading);
+    font-style: italic;
+    text-align: center;
+    color: var(--collection-muted);
+    font-size: 1.05rem;
+    padding: 3.5rem 1rem;
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 768px) {
+    #collection {
+        padding: 4.5rem 0 5.5rem;
+    }
+
+    .container {
+        padding: 0 1.25rem;
+    }
+
+    .collection-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 2rem 1.25rem;
+    }
+
+    .category-buttons {
+        justify-content: flex-start;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+    }
+
+    .category-buttons::-webkit-scrollbar {
+        display: none;
+    }
+
+    .category-btn {
+        padding: 0.75rem 0.85rem;
+        font-size: 0.84rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .collection-grid {
+        grid-template-columns: 1fr;
+        gap: 1.75rem;
+    }
+}
+
+/* =========================================================
+   7. About Us — Philosophy Showcase (used on aboutus.html)
+   ========================================================= */
+.ph-showcase {
+    display: flex;
+    align-items: stretch;
+    gap: 0;
+    margin: 48px 0;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 12px 30px rgba(74, 44, 24, 0.15);
+    background: var(--ph-bg);
+    border: 1px solid var(--ph-border);
+}
+
+.ph-showcase-image {
+    flex: 0 0 42%;
+    position: relative;
+    min-height: 340px;
+    background: var(--ph-image-bg);
+}
+
+.ph-showcase-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.ph-showcase-content {
+    flex: 1;
+    padding: 48px 44px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    background: linear-gradient(160deg, var(--ph-panel-start) 0%, var(--ph-panel-end) 100%);
+    color: var(--ph-text);
+}
+
+.ph-showcase-label {
+    display: inline-block;
+    font-family: var(--font-body);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--ph-gold);
+    margin-bottom: 14px;
+}
+
+.ph-showcase-motto {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: clamp(24px, 3vw, 34px);
+    line-height: 1.3;
+    color: #ffffff;
+    margin: 0 0 18px 0;
+}
+
+.ph-showcase-rule {
+    width: 56px;
+    height: 3px;
+    background: var(--ph-gold);
+    border: none;
+    margin: 0 0 18px 0;
+    border-radius: 2px;
+}
+
+.ph-showcase-sub {
+    font-family: var(--font-body);
+    font-weight: 300;
+    font-size: 15px;
+    line-height: 1.7;
+    color: var(--ph-sub);
+    margin: 0;
+    max-width: 46ch;
+}
+
+@media (max-width: 768px) {
+    .ph-showcase {
+        flex-direction: column;
+    }
+
+    .ph-showcase-image {
+        flex-basis: auto;
+        min-height: 240px;
+    }
+
+    .ph-showcase-content {
+        padding: 36px 28px;
+    }
+}
+
+/* =========================================================
+   8. Contact & Footer
+   ========================================================= */
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2.5rem;
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.contact-card {
+    background: #ffffff;
+    border: 1px solid rgba(229, 231, 235, 0.4);
+    border-radius: 20px;
+    padding: 3rem 2rem;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+}
+
+.contact-card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.contact-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-color), var(--accent-light));
+    transform: scaleX(0);
+    transition: transform 0.4s ease;
+}
+
+.contact-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06);
+}
+
+.contact-card:hover::before {
+    transform: scaleX(1);
+}
+
+.contact-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+    margin: 0 auto 1.5rem;
+    display: block;
+}
+
+.contact-icon.email,
+.contact-icon.location {
+    stroke: #e11d48;
+}
+
+.contact-icon.facebook {
+    color: #1877F3;
+}
+
+.contact-title {
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 0.75rem;
+    font-size: 1.25rem;
+    font-family: var(--font-heading);
+}
+
+.contact-info {
+    color: var(--text-light);
+    word-break: break-word;
+    font-size: 0.95rem;
+}
+
+.contact-info-footer-text {
+    color: var(--text-light);
+    font-size: 1rem;
+    margin-top: 2.5rem;
+    text-align: center;
+    width: 100%;
+}
+
+.footer {
+    background: #ffffff;
+    color: var(--text-dark);
+    border-top: 1px solid rgba(229, 231, 235, 0.3);
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.footer-logo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+}
+
+.footer-logo-circle {
+    width: 45px;
+    height: 45px;
+    background: linear-gradient(135deg, var(--accent-light) 0%, var(--accent-light-2) 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.footer-logo-circle span {
+    color: var(--text-dark);
+    font-weight: 700;
+    font-size: 1.1rem;
+    font-family: var(--font-body);
+}
+
+.footer-brand {
+    color: var(--text-dark);
+    font-size: 1.6rem;
+    font-weight: 700;
+    font-family: var(--font-heading);
+}
+
+.footer-description {
+    color: var(--text-light);
+    margin: 0 auto 1.5rem;
+    text-align: center;
+    font-size: 1rem;
+    max-width: 450px;
+    line-height: 1.6;
+}
+
+.footer-copyright {
+    color: #6b7280;
+    font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    .contact-card {
+        padding: 2.5rem 1.5rem;
+    }
+    .footer-brand {
+        font-size: 1.4rem;
+    }
+}
+
+/* =========================================================
+   9. Accessibility
+   ========================================================= */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* =========================================================
+   10. Authenticity Page — Quality & Provenance
+   Single source of truth for .qa-section, .bag-card, etc.
+   Background and header now match the About page's soft
+   peach-to-white fade and large serif title treatment.
+   ========================================================= */
+
+:root {
+  --qa-ink: #2B2118;
+  --qa-body: #6B6156;
+  --qa-muted: #8B7D6B;
+  --qa-accent: #B5566B;
+  --qa-pill-bg: #EFE3CC;
+  --qa-pill-text: #4A3B2A;
+  --qa-badge-bg: #3B2A1E;
+  --qa-badge-text: #F7F1E4;
+  --qa-line: #E4D8C1;
+  --qa-radius: 20px;
+}
+
+.qa-section {
+  position: relative;
+  background: linear-gradient(180deg, var(--accent-light-2) 0%, transparent 420px);
+  padding: 88px 24px 72px;
+  font-family: var(--font-body);
+}
+
+.qa-section__inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.qa-section__header {
+  text-align: center;
+  max-width: 620px;
+  margin: 0 auto 56px;
+}
+
+/* Eyebrow directly inside the page header — plain uppercase label,
+   no underline rule, matching the About page's "AUTHENTIC FILIPINO
+   ARTISTRY" treatment above "Our Story". */
+.qa-section__header > .qa-eyebrow {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.24em;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+.qa-section__header > .qa-eyebrow::before {
+  content: none;
+}
+
+.qa-section__header h2 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: clamp(2.25rem, 5vw, 3.25rem);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--text-dark);
+  margin: 0 0 14px;
+}
+
+.qa-section__header p {
+  color: var(--qa-body);
+  line-height: 1.6;
+  font-size: 15px;
+  margin: 0;
+}
+
+/* ---------- Bag certificate card ---------- */
+
+.bag-card {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  align-items: stretch;
+  background: #ffffff;
+  border: 1px solid var(--qa-line);
+  border-radius: var(--qa-radius);
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(43, 33, 24, 0.08);
+  scroll-margin-top: var(--header-height);
+}
+
+.bag-card + .bag-card {
+  margin-top: 40px;
+}
+
+.bag-card__image-wrap {
+  position: relative;
+  min-height: 320px;
+  background: #fff;
+}
+
+.bag-card__image-wrap img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.bag-card__badge {
+  position: absolute;
+  left: 16px;
+  bottom: 16px;
+  background: var(--qa-badge-bg);
+  color: var(--qa-badge-text);
+  padding: 10px 16px;
+  border-radius: 8px;
+  line-height: 1.25;
+}
+
+.bag-card__badge .line1 {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  opacity: 0.85;
+}
+
+.bag-card__badge .line2 {
+  font-family: var(--font-heading);
+  font-style: italic;
+  font-size: 16px;
+}
+
+.bag-card__content {
+  padding: 40px 44px;
+}
+
+.bag-card__content .qa-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--qa-muted);
+  margin-bottom: 10px;
+}
+
+.bag-card__content .qa-eyebrow::before {
+  content: none;
+}
+
+.bag-card__content h3 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 30px;
+  color: var(--qa-ink);
+  margin: 0 0 12px;
+}
+
+.bag-card__content h3 .accent {
+  color: var(--qa-accent);
+  font-style: italic;
+}
+
+.bag-card__desc {
+  color: var(--qa-body);
+  font-size: 14.5px;
+  line-height: 1.65;
+  margin: 0 0 24px;
+}
+
+.bag-fields {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px 28px;
+  margin: 0 0 24px;
+  padding-top: 20px;
+  border-top: 1px dashed var(--qa-line);
+}
+
+.bag-fields div {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.bag-fields dt {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--qa-muted);
+}
+
+.bag-fields dd {
+  margin: 0;
+  font-size: 14.5px;
+  font-weight: 500;
+  color: var(--qa-ink);
+  line-height: 1.4;
+}
+
+.bag-fields .full-width {
+  grid-column: 1 / -1;
+}
+
+.bag-card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 22px;
+}
+
+.bag-card__tags span {
+  background: var(--qa-pill-bg);
+  color: var(--qa-pill-text);
+  font-size: 12.5px;
+  font-weight: 500;
+  padding: 8px 16px;
+  border-radius: 999px;
+}
+
+.bag-card__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--qa-ink);
+  text-decoration: none;
+  border-bottom: 1px solid var(--qa-ink);
+  padding-bottom: 2px;
+}
+
+.bag-card__link:hover {
+  color: var(--qa-accent);
+  border-color: var(--qa-accent);
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 760px) {
+  .bag-card {
+    grid-template-columns: 1fr;
+  }
+  .bag-card__image-wrap {
+    min-height: 240px;
+  }
+  .bag-card__content {
+    padding: 28px 24px 32px;
+  }
+  .bag-fields {
+    gap: 14px 16px;
+  }
+}
+
+@media (max-width: 420px) {
+  .bag-card__content h3 {
+    font-size: 24px;
+  }
+  .bag-fields {
+    grid-template-columns: 1fr;
+  }
+}

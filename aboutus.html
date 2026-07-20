@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="About D'Bayong Art - Our mission, vision, and the traditional Filipino craftsmanship behind our unique bags.">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <title>About Us | D'Bayong Art</title>
+
+    <!-- Open Graph / social sharing -->
+    <meta property="og:title" content="About Us | D'Bayong Art">
+    <meta property="og:description" content="Our mission, vision, and the traditional Filipino craftsmanship behind our unique bags.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="title logo.png">
+
+    <!-- Favicon -->
+    <link rel="icon" href="title logo.png" type="image/png">
+
+    <!-- Preconnect for Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Scoped styles for the Philosophy Showcase section only.
+         Kept in its own file with unique class names (ph-showcase-*)
+         so nothing in style.css or any other section/page is touched. -->
+    <link rel="stylesheet" href="philosophy-showcase.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <div class="logo-circle">
+                        <img src="ass.png" alt="D'Bayong Art">
+                    </div>
+                    <span class="logo-text">D'Bayong Art</span>
+                </div>
+
+                <nav class="nav" aria-label="Primary">
+                    <a href="index.html#home" class="nav-link">HOME</a>
+                    <a href="aboutus.html" class="nav-link active-page">ABOUT US</a>
+                    <a href="index.html#collection" class="nav-link">COLLECTION</a>
+                    <a href="authentic.html" class="nav-link">AUTHENTICITY</a>
+                    <a href="index.html#contact" class="nav-link">CONTACT US</a>
+                </nav>
+
+                <button class="mobile-menu-btn" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobileNav">
+                    <svg width="24" height="24" fill="none" stroke="#8B5A3C" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+
+            <nav class="mobile-nav" id="mobileNav" aria-label="Mobile">
+                <a href="index.html#home" class="mobile-nav-link">HOME</a>
+                <a href="aboutus.html" class="mobile-nav-link">ABOUT US</a>
+                <a href="index.html#collection" class="mobile-nav-link">COLLECTION</a>
+                <a href="authentic.html" class="nav-link">AUTHENTICITY</a>
+                <a href="index.html#contact" class="mobile-nav-link">CONTACT US</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Brand Story -->
+    <div class="container">
+        <main class="about-page-container section section-gray">
+            <section>
+                <h1 class="section-title">Our Story</h1>
+
+                <p class="section-description">
+                    At D'Bayong Art, we believe that every handcrafted piece carries a story, one woven through generations of Filipino tradition, artistry, and passion. What began as a vision to celebrate the beauty of indigenous weaving has grown into a proudly Filipino social enterprise dedicated to creating timeless artisan bags and lifestyle pieces. By blending traditional craftsmanship with contemporary design, we transform natural materials into elegant creations that honor our cultural heritage while meeting the lifestyle of today's discerning customers.
+                </p>
+
+                <p class="section-description">
+                    Every D'Bayong Art piece is meticulously handcrafted by skilled Filipino artisans using locally sourced materials such as banig, pandan, hablon, abaca, and other indigenous fibers. Each design is individually conceptualized and carefully finished, ensuring that no two pieces are ever alike.
+                </p>
+
+                <!-- Philosophy Showcase: image + quote (scoped styles in philosophy-showcase.css) -->
+                <div class="ph-showcase">
+                    <div class="ph-showcase-image">
+                        <img src="one bag.png" alt="Handwoven D'Bayong Art bag, one of a kind" loading="lazy">
+                    </div>
+                    <div class="ph-showcase-content">
+                        <span class="ph-showcase-label">Our Philosophy Is Simple</span>
+                        <h3 class="ph-showcase-motto">One Bag. One Design.<br>Never Repeated.</h3>
+                        <hr class="ph-showcase-rule">
+                        <p class="ph-showcase-sub">Every piece is individually conceptualized and handcrafted, ensuring no two bags are ever alike — a true work of wearable Filipino art.</p>
+                    </div>
+                </div>
+
+                <p class="section-description">
+                    This commitment to exclusivity means every bag is a unique work of wearable art, crafted not only to be beautiful but to preserve the authenticity of Filipino craftsmanship. Beyond creating exceptional products, D'Bayong Art exists to create meaningful impact. Every purchase helps sustain local weaving traditions, empowers artisan communities, generates livelihood opportunities, and keeps centuries-old Filipino craftsmanship alive for future generations.
+                </p>
+
+                <p class="section-description">
+                    As we continue to grow, we embrace innovation while staying true to our roots. From handcrafted luxury collections to future digital authentication through NFC technology, we are building a brand where heritage, sustainability, craftsmanship, and technology come together.
+                </p>
+            </section>
+        </main>
+    </div>
+
+    <!-- Contact -->
+    <section id="contact" class="section section-gray">
+        <div class="container">
+            <h2 class="section-title">Contact Us</h2>
+
+            <div class="text-center mb-8">
+                <p class="section-description">
+                    For inquiries, collaborations, or custom orders, please reach out to us using the following details:
+                </p>
+            </div>
+
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <a href="mailto:derickzamora36@gmail.com" class="contact-card-link">
+                        <svg class="contact-icon email" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l9 6 9-6M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                        </svg>
+                        <h3 class="contact-title">Email</h3>
+                        <p class="contact-info">derickzamora36@gmail.com</p>
+                    </a>
+                </div>
+
+                <div class="contact-card">
+                    <a href="https://www.facebook.com/DBayongArt" target="_blank" rel="noopener noreferrer" class="contact-card-link">
+                        <svg class="contact-icon facebook" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M22.675 0h-21.35C.595 0 0 .592 0 1.326v21.348C0 23.408.595 24 1.325 24h11.495v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.797.143v3.24l-1.918.001c-1.504 0-1.797.715-1.797 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116C23.406 24 24 23.408 24 22.674V1.326C24 .592 23.406 0 22.675 0"/>
+                        </svg>
+                        <h3 class="contact-title">Facebook</h3>
+                        <p class="contact-info">D'Bayong Art</p>
+                    </a>
+                </div>
+
+                <div class="contact-card">
+                    <a href="https://www.google.com/maps/place/Bacolod+City,+Negros+Occidental,+Philippines/@10.6765,122.9509,12z" target="_blank" rel="noopener noreferrer" class="contact-card-link">
+                        <svg class="contact-icon location" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                            <circle cx="12" cy="11" r="3"/>
+                        </svg>
+                        <h3 class="contact-title">Location</h3>
+                        <p class="contact-info">Bacolod City, Negros Occidental</p>
+                    </a>
+                </div>
+            </div>
+
+            <div class="text-center mt-8">
+                <p class="contact-info-footer-text">
+                    We specialize in unique handcrafted Bayong bags and look forward to hearing from you.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-logo">
+                <div class="footer-logo-circle">
+                    <img src="ass.png" alt="D'Bayong Art Logo" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">
+                </div>
+                <span class="footer-brand">D'Bayong Art</span>
+            </div>
+            <p class="footer-description">
+                Preserving Filipino craftsmanship through beautiful handwoven Bayong bags
+            </p>
+            <p class="footer-copyright">© 2024 D'Bayong Art. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Mobile navigation toggle -->
+    <script>
+        const menuBtn = document.querySelector('.mobile-menu-btn');
+        const mobileNav = document.getElementById('mobileNav');
+        const mobileLinks = document.querySelectorAll('.mobile-nav-link');
+
+        function toggleMenu() {
+            const isExpanded = menuBtn.getAttribute('aria-expanded') === 'true';
+            menuBtn.setAttribute('aria-expanded', !isExpanded);
+            mobileNav.classList.toggle('active');
+        }
+
+        menuBtn.addEventListener('click', toggleMenu);
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                menuBtn.setAttribute('aria-expanded', 'false');
+                mobileNav.classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Verify the authenticity of your D'Bayong Art bag. Every piece carries a unique certificate of craftsmanship, artisan, material, and origin.">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <title>Authenticity | D'Bayong Art</title>
+
+    <!-- Open Graph / social sharing -->
+    <meta property="og:title" content="Authenticity | D'Bayong Art">
+    <meta property="og:description" content="Verify the authenticity of your D'Bayong Art bag with its unique certificate of craftsmanship.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="title logo.png">
+
+    <!-- Favicon -->
+    <link rel="icon" href="title logo.png" type="image/png">
+
+    <!-- Preconnect for Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Same stylesheet as the rest of the site — the Quality & Authenticity
+         classes (.qa-section, .bag-card, etc.) live in style.css too, so this
+         page stays connected to the same design system as index.html / aboutus.html. -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header (identical to every other page) -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <div class="logo-circle">
+                        <img src="ass.png" alt="D'Bayong Art">
+                    </div>
+                    <span class="logo-text">D'Bayong Art</span>
+                </div>
+
+                <nav class="nav" aria-label="Primary">
+                    <a href="index.html#home" class="nav-link">HOME</a>
+                    <a href="aboutus.html" class="nav-link">ABOUT US</a>
+                    <a href="index.html#collection" class="nav-link">COLLECTION</a>
+                    <a href="authentic.html" class="nav-link active-page">AUTHENTICITY</a>
+                    <a href="index.html#contact" class="nav-link">CONTACT US</a>
+                </nav>
+
+                <button class="mobile-menu-btn" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobileNav">
+                    <svg width="24" height="24" fill="none" stroke="#8B5A3C" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+
+            <nav class="mobile-nav" id="mobileNav" aria-label="Mobile">
+                <a href="index.html#home" class="mobile-nav-link">HOME</a>
+                <a href="aboutus.html" class="mobile-nav-link">ABOUT US</a>
+                <a href="index.html#collection" class="mobile-nav-link">COLLECTION</a>
+                <a href="authentic.html" class="mobile-nav-link active-page">AUTHENTICITY</a>
+                <a href="index.html#contact" class="mobile-nav-link">CONTACT US</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Quality & Authenticity -->
+    <section class="qa-section">
+        <div class="qa-section__inner">
+
+            <div class="qa-section__header">
+                <span class="qa-eyebrow">Certified Craftsmanship</span>
+                <h2>Signature Authenticity</h2>
+                <p>
+                    Every D'Bayong Art bag is one of a kind. Scan the NFC tag on your piece  or find it below  to see who made it, what it's made of, and confirm it's genuinely ours.
+                </p>
+            </div>
+
+            <!-- ============================================================
+                 BAG CERTIFICATE TEMPLATE
+                 Copy everything from <article ...> to </article> to add
+                 another bag. For each new one, change:
+                   1. id="DBA-2026-0001" on the <article> — use the new
+                      serial. This id is what makes a link like
+                      "authentic.html#DBA-2026-0002" jump straight to that
+                      bag's card instead of the top of the page.
+                   2. the image src/alt
+                   3. the badge text
+                   4. the short description paragraph
+                   5. every <dd> value in the field list
+                   6. the pills in .bag-card__tags
+                   7. the mailto subject line in .bag-card__link
+                 ============================================================ -->
+         <!-- Added inline style for scroll-margin-top so the navigation bar won't cover the image when scanned -->
+<article class="bag-card" id="DBA-2026-0001" style="scroll-margin-top: 100px;">
+    <div class="bag-card__image-wrap">
+        <!-- Publicly anchored image link -->
+        <a href="#DBA-2026-0001">
+            <img src="au3.png" alt="Hand-painted portrait bayong tote featuring a woman in a wide-brimmed hat with tropical flowers, set against a sunset palm scene" loading="lazy" decoding="async">
+        </a>
+        <div class="bag-card__badge">
+            <span class="line1">Hand-woven</span>
+            <span class="line2">One of a kind</span>
+        </div>
+    </div>
+
+    <div class="bag-card__content">
+        <span class="qa-eyebrow">Certificate of Authenticity</span>
+        <h3>Premium <span class="accent">Banig</span> Collection</h3>
+        <p class="bag-card__desc">
+           I am a passionate full-time artist and Bachelor of Fine Arts graduate who creates meaningful artworks inspired by everyday life, nature, and human experiences. Through my art, I hope to express creativity, inspire others, and share the beauty and emotion that connect us all.
+        </p>
+
+        <dl class="bag-fields">
+            <div>
+                <dt>Bag Serial</dt>
+                <dd>DBA-2026-0001</dd>
+            </div>
+            <div>
+                <dt>Date Crafted</dt>
+                <dd>July 2026</dd>
+            </div>
+            <div>
+                <dt>Artisan</dt>
+                <dd>Magie Glaraga</dd>
+            </div>
+            <div>
+                <dt>Material Used</dt>
+                <dd>Banig / Sabutan</dd>
+            </div>
+            <div class="full-width">
+                <dt>Status</dt>
+                <dd>One Bag, One Design, Never Repeated</dd>
+            </div>
+        </dl>
+
+        <div class="bag-card__tags">
+            <span>100% Handwoven</span>
+            <span>Certified Original</span>
+        </div>
+    </div>
+</article>
+
+            <!-- Copy the <article class="bag-card"> block above for every additional bag. -->
+
+        </div>
+    </section>
+
+    <!-- Footer (identical to every other page) -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-logo">
+                <div class="footer-logo-circle">
+                    <img src="ass.png" alt="D'Bayong Art Logo" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">
+                </div>
+                <span class="footer-brand">D'Bayong Art</span>
+            </div>
+            <p class="footer-description">
+                Preserving Filipino craftsmanship through beautiful handwoven Bayong bags
+            </p>
+            <p class="footer-copyright">© 2024 D'Bayong Art. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Mobile navigation toggle (identical to every other page) -->
+    <script>
+        const menuBtn = document.querySelector('.mobile-menu-btn');
+        const mobileNav = document.getElementById('mobileNav');
+        const mobileLinks = document.querySelectorAll('.mobile-nav-link');
+
+        function toggleMenu() {
+            const isExpanded = menuBtn.getAttribute('aria-expanded') === 'true';
+            menuBtn.setAttribute('aria-expanded', !isExpanded);
+            mobileNav.classList.toggle('active');
+        }
+
+        menuBtn.addEventListener('click', toggleMenu);
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                menuBtn.setAttribute('aria-expanded', 'false');
+                mobileNav.classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>
