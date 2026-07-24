@@ -23,41 +23,43 @@
 </head>
 <body>
 
-    <header class="header">
-        <div class="container">
-            <div class="header-content">
+<header class="header">
+    <div class="container">
+        <div class="header-content">
 
-                <div class="logo">
-                    <div class="logo-circle">
-                        <img src="ass.png" alt="D'Bayong Art">
-                    </div>
-                    <span class="logo-text">D'Bayong Art</span>
+            <div class="logo">
+                <div class="logo-circle">
+                    <img src="ass.png" alt="D'Bayong Art">
                 </div>
-
-                <nav class="nav" aria-label="Primary">
-                    <a href="#home" class="nav-link">HOME</a>
-                    <a href="aboutus.html" class="nav-link">ABOUT US</a>
-                    <a href="#collection" class="nav-link">COLLECTION</a>
-                    <a href="authentic.html" class="nav-link">AUTHENTICITY</a>
-                    <a href="#contact" class="nav-link">CONTACT US</a>
-                </nav>
-
-                <button class="mobile-menu-btn" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobileNav">
-                    <svg width="24" height="24" fill="none" stroke="#8B5A3C" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                    </svg>
-                </button>
+                <span class="logo-text">D'Bayong Art</span>
             </div>
 
-            <nav class="mobile-nav" id="mobileNav" aria-label="Mobile">
-                <a href="#home" class="mobile-nav-link">HOME</a>
-                <a href="aboutus.html" class="mobile-nav-link">ABOUT US</a>
-                <a href="#collection" class="mobile-nav-link">COLLECTION</a>
-                <a href="authentic.html" class="nav-link">AUTHENTICITY</a>
-                <a href="#contact" class="mobile-nav-link">CONTACT US</a>
+            <!-- Desktop Navigation -->
+            <nav class="nav" aria-label="Primary">
+                <a href="index.html#home" class="nav-link">HOME</a>
+                <a href="aboutus.html" class="nav-link">ABOUT US</a>
+                <a href="index.html#collection" class="nav-link">COLLECTION</a>
+                <a href="authentic.html" class="nav-link">AUTHENTIC</a>
+                <a href="index.html#contact" class="nav-link">CONTACT US</a>
             </nav>
+
+            <button class="mobile-menu-btn" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobileNav">
+                <svg width="24" height="24" fill="none" stroke="#8B5A3C" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
         </div>
-    </header>
+
+        <!-- Mobile Navigation -->
+        <nav class="mobile-nav" id="mobileNav" aria-label="Mobile">
+            <a href="index.html#home" class="mobile-nav-link">HOME</a>
+            <a href="aboutus.html" class="mobile-nav-link">ABOUT US</a>
+            <a href="index.html#collection" class="mobile-nav-link">COLLECTION</a>
+            <a href="authentic.html" class="mobile-nav-link">AUTHENTIC</a>
+            <a href="index.html#contact" class="mobile-nav-link">CONTACT US</a>
+        </nav>
+    </div>
+</header>
 
     <!-- Hero -->
     <section id="home" class="hero">
@@ -460,7 +462,6 @@
                 </div>
                 <div class="product-info">
                     <h3 class="product-title">Crimson Gumamela Dream</h3>
-                    <p class="product-category">Hand-Painted</p>
                     <p class="product-desc">Striking red hibiscus blooms hand-painted on a natural woven canvas, celebrating native Philippine tropical beauty.</p>
                 </div>
             </div>
@@ -501,6 +502,7 @@
             Discover our exquisite range of handcrafted Bayong bags, each piece telling a unique story of Filipino
             artistry and tradition.
         </p>
+        <p class="collection-note">Starting at &#8369;X &mdash; message us for current pricing and availability.</p>
 
         <!-- Category filter buttons -->
         <div class="category-buttons" role="tablist" aria-label="Filter collection by category">
@@ -515,7 +517,7 @@
         <div class="collection-grid category-container" id="collectionGrid">
 
             <!-- ==================== HAND-PAINTED SECTION ==================== -->
-            <div class="product-card" data-category="hand-painted">
+            <div class="product-card reveal" data-category="hand-painted">
                 <div class="product-image">
                     <img src="photo_6240276010519695547_y (1)-clean.png" alt="Elegant Floral Bayong" loading="lazy" decoding="async" onerror="this.outerHTML='<div class=&quot;product-placeholder&quot;><span>Sunflower Delight</span></div>';">
                 </div>
@@ -526,7 +528,7 @@
                 </div>
             </div>
 
-            <div class="product-card" data-category="hand-painted">
+            <div class="product-card reveal" data-category="hand-painted">
                 <div class="product-image">
                     <img src="handpainted 2.png" alt="Designer Bayong" loading="lazy" decoding="async" onerror="this.outerHTML='<div class=&quot;product-placeholder&quot;><span>Floral Garden</span></div>';">
                 </div>
@@ -537,7 +539,7 @@
                 </div>
             </div>
 
-            <div class="product-card" data-category="hand-painted">
+            <div class="product-card reveal" data-category="hand-painted">
                 <div class="product-image">
                     <img src="handpainted 3.png" alt="Artistic Bayong" loading="lazy" decoding="async" onerror="this.outerHTML='<div class=&quot;product-placeholder&quot;><span>Butterfly Garden</span></div>';">
                 </div>
@@ -548,7 +550,7 @@
                 </div>
             </div>
 
-            <div class="product-card" data-category="hand-painted">
+            <div class="product-card reveal" data-category="hand-painted">
                 <div class="product-image">
                     <img src="handpainted.png" alt="Designer Collection" loading="lazy" decoding="async" onerror="this.outerHTML='<div class=&quot;product-placeholder&quot;><span>Rose Garden</span></div>';">
                 </div>
@@ -560,7 +562,7 @@
             </div>
 
             <!-- ==================== BANIG & HABLON SECTION ==================== -->
-            <div class="product-card" data-category="banig-hablon">
+            <div class="product-card reveal" data-category="banig-hablon">
                 <div class="product-image">
                     <img src="banig 1.jpg" alt="Classic Bayong" loading="lazy" decoding="async" onerror="this.outerHTML='<div class=&quot;product-placeholder&quot;><span>Natural Elegance</span></div>';">
                 </div>
@@ -571,7 +573,7 @@
                 </div>
             </div>
 
-            <div class="product-card" data-category="banig-hablon">
+            <div class="product-card reveal" data-category="banig-hablon">
                 <div class="product-image">
                     <img src="banig 2.jpg" alt="Premium Woven Bayong" loading="lazy" decoding="async" onerror="this.outerHTML='<div class=&quot;product-placeholder&quot;><span>Natural Weave</span></div>';">
                 </div>
@@ -582,7 +584,7 @@
                 </div>
             </div>
 
-            <div class="product-card" data-category="banig-hablon">
+            <div class="product-card reveal" data-category="banig-hablon">
                 <div class="product-image">
                     <img src="banig3.jpg" alt="Premium Woven Bayong" loading="lazy" decoding="async" onerror="this.outerHTML='<div class=&quot;product-placeholder&quot;><span>Natural Weave</span></div>';">
                 </div>
@@ -593,7 +595,7 @@
                 </div>
             </div>
 
-            <div class="product-card" data-category="banig-hablon">
+            <div class="product-card reveal" data-category="banig-hablon">
                 <div class="product-image">
                     <img src="banig 4.jpg" alt="Premium Woven Bayong" loading="lazy" decoding="async" onerror="this.outerHTML='<div class=&quot;product-placeholder&quot;><span>Natural Weave</span></div>';">
                 </div>
@@ -604,7 +606,7 @@
                 </div>
             </div>
 
-            <div class="product-card" data-category="banig-hablon">
+            <div class="product-card reveal" data-category="banig-hablon">
                 <div class="product-image">
                     <img src="banig5.jpg" alt="Premium Woven Bayong" loading="lazy" decoding="async" onerror="this.outerHTML='<div class=&quot;product-placeholder&quot;><span>Natural Weave</span></div>';">
                 </div>
@@ -615,7 +617,7 @@
                 </div>
             </div>
 
-            <div class="product-card" data-category="banig-hablon">
+            <div class="product-card reveal" data-category="banig-hablon">
                 <div class="product-image">
                     <img src="banig 7.jpg" alt="Premium Woven Bayong" loading="lazy" decoding="async" onerror="this.outerHTML='<div class=&quot;product-placeholder&quot;><span>Natural Weave</span></div>';">
                 </div>
@@ -626,7 +628,7 @@
                 </div>
             </div>
 
-            <div class="product-card" data-category="banig-hablon">
+            <div class="product-card reveal" data-category="banig-hablon">
                 <div class="product-image">
                     <img src="banig 8.jpg" alt="Premium Woven Bayong" loading="lazy" decoding="async" onerror="this.outerHTML='<div class=&quot;product-placeholder&quot;><span>Natural Weave</span></div>';">
                 </div>
@@ -637,7 +639,7 @@
                 </div>
             </div>
 
-            <div class="product-card" data-category="banig-hablon">
+            <div class="product-card reveal" data-category="banig-hablon">
                 <div class="product-image">
                     <img src="banigg.jpg" alt="Premium Woven Bayong" loading="lazy" decoding="async" onerror="this.outerHTML='<div class=&quot;product-placeholder&quot;><span>Natural Weave</span></div>';">
                 </div>
@@ -649,7 +651,7 @@
             </div>
 
             <!-- ==================== UPCYCLED BANIG SECTION ==================== -->
-            <div class="product-card" data-category="upcycled-banig">
+            <div class="product-card reveal" data-category="upcycled-banig">
                 <div class="product-image">
                     <img src="up1.jpg" alt="Upcycled Banig Tote" loading="lazy" decoding="async" onerror="this.outerHTML='<div class=&quot;product-placeholder&quot;><span>Eco Tote</span></div>';">
                 </div>
@@ -660,7 +662,7 @@
                 </div>
             </div>
 
-            <div class="product-card" data-category="upcycled-banig">
+            <div class="product-card reveal" data-category="upcycled-banig">
                 <div class="product-image">
                     <img src="up2.jpg" alt="Patchwork Banig Clutch" loading="lazy" decoding="async" onerror="this.outerHTML='<div class=&quot;product-placeholder&quot;><span>Patchwork Clutch</span></div>';">
                 </div>
@@ -671,7 +673,7 @@
                 </div>
             </div>
 
-            <div class="product-card" data-category="upcycled-banig">
+            <div class="product-card reveal" data-category="upcycled-banig">
                 <div class="product-image">
                     <img src="up3.jpg" alt="Eco-Weave Handbag" loading="lazy" decoding="async" onerror="this.outerHTML='<div class=&quot;product-placeholder&quot;><span>Eco Handbag</span></div>';">
                 </div>
@@ -682,7 +684,7 @@
                 </div>
             </div>
 
-            <div class="product-card" data-category="upcycled-banig">
+            <div class="product-card reveal" data-category="upcycled-banig">
                 <div class="product-image">
                     <img src="up4.jpg" alt="Rustic Banig Sling" loading="lazy" decoding="async" onerror="this.outerHTML='<div class=&quot;product-placeholder&quot;><span>Rustic Sling</span></div>';">
                 </div>
@@ -693,7 +695,7 @@
                 </div>
             </div>
 
-            <div class="product-card" data-category="upcycled-banig">
+            <div class="product-card reveal" data-category="upcycled-banig">
                 <div class="product-image">
                     <img src="up6.jpg" alt="Bohemian Banig Backpack" loading="lazy" decoding="async" onerror="this.outerHTML='<div class=&quot;product-placeholder&quot;><span>Boho Backpack</span></div>';">
                 </div>
@@ -704,7 +706,7 @@
                 </div>
             </div>
 
-            <div class="product-card" data-category="upcycled-banig">
+            <div class="product-card reveal" data-category="upcycled-banig">
                 <div class="product-image">
                     <img src="up7.jpg" alt="Recycled Banig Pouch" loading="lazy" decoding="async" onerror="this.outerHTML='<div class=&quot;product-placeholder&quot;><span>Artisan Pouch</span></div>';">
                 </div>
@@ -715,7 +717,7 @@
                 </div>
             </div>
 
-            <div class="product-card" data-category="upcycled-banig">
+            <div class="product-card reveal" data-category="upcycled-banig">
                 <div class="product-image">
                     <img src="up8.jpg" alt="Heritage Banig Carryall" loading="lazy" decoding="async" onerror="this.outerHTML='<div class=&quot;product-placeholder&quot;><span>Heritage Carryall</span></div>';">
                 </div>
@@ -726,7 +728,7 @@
                 </div>
             </div>
 
-            <div class="product-card" data-category="upcycled-banig">
+            <div class="product-card reveal" data-category="upcycled-banig">
                 <div class="product-image">
                     <img src="up9.jpg" alt="Artisan Banig Envelope" loading="lazy" decoding="async" onerror="this.outerHTML='<div class=&quot;product-placeholder&quot;><span>Eco Envelope</span></div>';">
                 </div>
@@ -738,7 +740,7 @@
             </div>
 
             <!-- ==================== CORPORATE GIFTS & CLUTCHES ==================== -->
-            <div class="product-card" data-category="corporate-gifts">
+            <div class="product-card reveal" data-category="corporate-gifts">
                 <div class="product-image">
                     <img src="gift1.jpg" alt="Executive Banig Portfolio" loading="lazy" decoding="async" onerror="this.outerHTML='<div class=&quot;product-placeholder&quot;><span>Executive Portfolio</span></div>';">
                 </div>
@@ -749,7 +751,7 @@
                 </div>
             </div>
 
-            <div class="product-card" data-category="corporate-gifts">
+            <div class="product-card reveal" data-category="corporate-gifts">
                 <div class="product-image">
                     <img src="gift2.jpg" alt="Premium Woven Clutch" loading="lazy" decoding="async" onerror="this.outerHTML='<div class=&quot;product-placeholder&quot;><span>Premium Clutch</span></div>';">
                 </div>
@@ -760,7 +762,7 @@
                 </div>
             </div>
 
-            <div class="product-card" data-category="corporate-gifts">
+            <div class="product-card reveal" data-category="corporate-gifts">
                 <div class="product-image">
                     <img src="gift3.jpg" alt="Signature Gift Set" loading="lazy" decoding="async" onerror="this.outerHTML='<div class=&quot;product-placeholder&quot;><span>Signature Set</span></div>';">
                 </div>
@@ -771,7 +773,7 @@
                 </div>
             </div>
 
-            <div class="product-card" data-category="corporate-gifts">
+            <div class="product-card reveal" data-category="corporate-gifts">
                 <div class="product-image">
                     <img src="gift4.jpg" alt="Minimalist Document Sleeve" loading="lazy" decoding="async" onerror="this.outerHTML='<div class=&quot;product-placeholder&quot;><span>Document Sleeve</span></div>';">
                 </div>
@@ -782,7 +784,7 @@
                 </div>
             </div>
 
-            <div class="product-card" data-category="corporate-gifts">
+            <div class="product-card reveal" data-category="corporate-gifts">
                 <div class="product-image">
                     <img src="gift5.jpg" alt="Midnight Gold Clutch" loading="lazy" decoding="async" onerror="this.outerHTML='<div class=&quot;product-placeholder&quot;><span>Midnight Clutch</span></div>';">
                 </div>
@@ -793,7 +795,7 @@
                 </div>
             </div>
 
-            <div class="product-card" data-category="corporate-gifts">
+            <div class="product-card reveal" data-category="corporate-gifts">
                 <div class="product-image">
                     <img src="gift6.jpg" alt="Artisan Desk Organizer" loading="lazy" decoding="async" onerror="this.outerHTML='<div class=&quot;product-placeholder&quot;><span>Desk Organizer</span></div>';">
                 </div>
@@ -867,11 +869,11 @@
 </style>
 
 
-<a href="https://www.facebook.com/DBayongArt" target="_blank" rel="noopener noreferrer" class="floating-order-btn" aria-label="Order Now on Facebook Messenger">
+<a href="https://m.me/DBayongArt" target="_blank" rel="noopener noreferrer" class="floating-order-btn" aria-label="Message Us on Facebook Messenger">
     <svg class="messenger-icon" viewBox="0 0 24 24">
         <path d="M12 2C6.477 2 2 6.145 2 11.258c0 2.912 1.452 5.518 3.715 7.166.195.143.307.375.302.617l-.063 2.15c-.01.352.348.625.684.512l2.42-.816a.82.82 0 0 1 .533.033c.758.265 1.57.41 2.409.41 5.523 0 10-4.145 10-9.258C22 6.145 17.523 2 12 2zm1.03 12.115-2.623-2.795-5.114 2.795 5.623-5.968 2.68 2.795 5.057-2.795-5.623 5.968z"/>
     </svg>
-    Order Now
+    Message Us
 </a>
 
 
@@ -907,6 +909,10 @@
             emptyMsg.hidden = visibleCount !== 0;
         }
         grid.hidden = visibleCount === 0;
+
+        // Keep the filtered grid in view instead of leaving the user
+        // scrolled past a much shorter (or longer) result set.
+        grid.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
 
     function selectButton(clicked) {
@@ -931,73 +937,113 @@
 })();
 </script>
 
-<!-- Contact Section -->
-<section id="contact" class="section section-gray">
-    <div class="container">
-        <h2 class="section-title">Contact Us</h2>
+<!-- Scroll-reveal for cards: fades sections in as they enter the viewport.
+     Respects prefers-reduced-motion (handled in style.css and the check below). -->
+<script>
+(function () {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    var targets = document.querySelectorAll('.reveal');
+    if (!targets.length) return;
 
-        <div class="text-center mb-8">
-            <p class="section-description">
-                For inquiries, collaborations, or custom orders, please reach out to us using the following details:
-            </p>
-        </div>
+    var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.15 });
 
-        <div class="contact-grid">
-            <div class="contact-card">
-                <a href="mailto:derickzamora36@gmail.com" class="contact-card-link">
-                    <svg class="contact-icon email" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l9 6 9-6M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
-                    </svg>
-                    <h3 class="contact-title">Email</h3>
-                    <p class="contact-info">derickzamora36@gmail.com</p>
-                </a>
+    targets.forEach(function (el) { observer.observe(el); });
+})();
+</script>
+
+<footer class="footer" id="contact">
+    <!-- Top Gradient Divider -->
+    <div class="footer-accent-line"></div>
+
+    <div class="footer-top">
+        <div class="container footer-top-inner">
+            
+            <!-- Explore Column Card -->
+            <div class="footer-card">
+                <div class="footer-card-header">
+                    <span class="footer-badge">Navigation</span>
+                    <h4 class="footer-heading">Explore</h4>
+                </div>
+                <nav class="footer-links-col" aria-label="Footer Navigation">
+                    <a href="index.html#home" class="footer-link">
+                        <span class="link-bullet"></span> Home
+                    </a>
+                    <a href="aboutus.html" class="footer-link">
+                        <span class="link-bullet"></span> About Us
+                    </a>
+                    <a href="index.html#collection" class="footer-link">
+                        <span class="link-bullet"></span> Collection
+                    </a>
+                    <a href="authentic.html" class="footer-link">
+                        <span class="link-bullet"></span> Authentic
+                    </a>
+                </nav>
             </div>
 
-            <div class="contact-card">
-                <a href="https://www.facebook.com/DBayongArt" target="_blank" rel="noopener" class="contact-card-link">
-                    <svg class="contact-icon facebook" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M22.675 0h-21.35C.595 0 0 .592 0 1.326v21.348C0 23.408.595 24 1.325 24h11.495v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.797.143v3.24l-1.918.001c-1.504 0-1.797.715-1.797 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116C23.406 24 24 23.408 24 22.674V1.326C24 .592 23.406 0 22.675 0"/>
-                    </svg>
-                    <h3 class="contact-title">Facebook</h3>
-                    <p class="contact-info">D'Bayong Art</p>
-                </a>
+            <!-- Get In Touch Column Card -->
+            <div class="footer-card">
+                <div class="footer-card-header">
+                    <span class="footer-badge">Reach Out</span>
+                    <h4 class="footer-heading">Get In Touch</h4>
+                </div>
+                
+                <div class="footer-contact-col">
+                    <a href="mailto:derickzamora36@gmail.com" class="footer-contact-item">
+                        <div class="contact-icon-wrapper">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                        </div>
+                        <div class="contact-text-group">
+                            <span class="contact-label">Email Us</span>
+                            <span class="contact-value">derickzamora36@gmail.com</span>
+                        </div>
+                    </a>
+
+                    <a href="https://www.facebook.com/DBayongArt" target="_blank" rel="noopener noreferrer" class="footer-contact-item">
+                        <div class="contact-icon-wrapper fb-wrapper">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22.675 0h-21.35C.595 0 0 .592 0 1.326v21.348C0 23.408.595 24 1.325 24h11.495v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.797.143v3.24l-1.918.001c-1.504 0-1.797.715-1.797 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116C23.406 24 24 23.408 24 22.674V1.326C24 .592 23.406 0 22.675 0"/></svg>
+                        </div>
+                        <div class="contact-text-group">
+                            <span class="contact-label">Facebook</span>
+                            <span class="contact-value">facebook.com/DBayongArt</span>
+                        </div>
+                    </a>
+
+                    <div class="footer-contact-item">
+                        <div class="contact-icon-wrapper">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                        </div>
+                        <div class="contact-text-group">
+                            <span class="contact-label">Location</span>
+                            <span class="contact-value">Bacolod City, Negros Occidental</span>
+                        </div>
+                    </div>
+                </div>
             </div>
 
-            <div class="contact-card">
-                <a href="https://www.google.com/maps/place/Bacolod+City,+Negros+Occidental,+Philippines/@10.6765,122.9509,12z" target="_blank" rel="noopener" class="contact-card-link">
-                    <svg class="contact-icon location" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
-                        <circle cx="12" cy="11" r="3"/>
-                    </svg>
-                    <h3 class="contact-title">Location</h3>
-                    <p class="contact-info">Bacolod City, Negros Occidental</p>
-                </a>
-            </div>
-        </div>
-
-        <div class="text-center mt-8">
-            <p class="contact-info-footer-text">
-                We specialize in unique handcrafted Bayong bags and look forward to hearing from you.
-            </p>
         </div>
     </div>
-</section>
 
-<!-- Footer -->
-<footer class="footer">
-    <div class="container">
-        <div class="footer-logo">
-            <div class="footer-logo-circle">
-                <img src="ass.png" alt="D'Bayong Art Logo" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">
-            </div>
-            <span class="footer-brand">D'Bayong Art</span>
+    <!-- Bottom Bar -->
+    <div class="footer-bottom">
+        <div class="container footer-bottom-inner">
+            <p class="footer-copyright">&copy; 2024 D'Bayong Art. All rights reserved.</p>
+            <p class="footer-tagline">
+                <span class="ph-heart">🇵🇭</span> Handwoven with pride in the Philippines
+            </p>
         </div>
-        <p class="footer-description">
-            Preserving Filipino craftsmanship through beautiful handwoven Bayong bags
-        </p>
-        <p class="footer-copyright">© 2024 D'Bayong Art. All rights reserved.</p>
     </div>
 </footer>
+
+
+
+
 
 </body>
 </html>

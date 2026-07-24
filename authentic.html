@@ -30,40 +30,43 @@
 <body>
 
     <!-- Header (identical to every other page) -->
-    <header class="header">
-        <div class="container">
-            <div class="header-content">
-                <div class="logo">
-                    <div class="logo-circle">
-                        <img src="ass.png" alt="D'Bayong Art">
-                    </div>
-                    <span class="logo-text">D'Bayong Art</span>
+ <header class="header">
+    <div class="container">
+        <div class="header-content">
+
+            <div class="logo">
+                <div class="logo-circle">
+                    <img src="ass.png" alt="D'Bayong Art">
                 </div>
-
-                <nav class="nav" aria-label="Primary">
-                    <a href="index.html#home" class="nav-link">HOME</a>
-                    <a href="aboutus.html" class="nav-link">ABOUT US</a>
-                    <a href="index.html#collection" class="nav-link">COLLECTION</a>
-                    <a href="authentic.html" class="nav-link active-page">AUTHENTICITY</a>
-                    <a href="index.html#contact" class="nav-link">CONTACT US</a>
-                </nav>
-
-                <button class="mobile-menu-btn" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobileNav">
-                    <svg width="24" height="24" fill="none" stroke="#8B5A3C" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                    </svg>
-                </button>
+                <span class="logo-text">D'Bayong Art</span>
             </div>
 
-            <nav class="mobile-nav" id="mobileNav" aria-label="Mobile">
-                <a href="index.html#home" class="mobile-nav-link">HOME</a>
-                <a href="aboutus.html" class="mobile-nav-link">ABOUT US</a>
-                <a href="index.html#collection" class="mobile-nav-link">COLLECTION</a>
-                <a href="authentic.html" class="mobile-nav-link active-page">AUTHENTICITY</a>
-                <a href="index.html#contact" class="mobile-nav-link">CONTACT US</a>
+            <!-- Desktop Navigation -->
+            <nav class="nav" aria-label="Primary">
+                <a href="index.html#home" class="nav-link">HOME</a>
+                <a href="aboutus.html" class="nav-link">ABOUT US</a>
+                <a href="index.html#collection" class="nav-link">COLLECTION</a>
+                <a href="authentic.html" class="nav-link">AUTHENTIC</a>
+                <a href="index.html#contact" class="nav-link">CONTACT US</a>
             </nav>
+
+            <button class="mobile-menu-btn" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobileNav">
+                <svg width="24" height="24" fill="none" stroke="#8B5A3C" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
         </div>
-    </header>
+
+        <!-- Mobile Navigation -->
+        <nav class="mobile-nav" id="mobileNav" aria-label="Mobile">
+            <a href="index.html#home" class="mobile-nav-link">HOME</a>
+            <a href="aboutus.html" class="mobile-nav-link">ABOUT US</a>
+            <a href="index.html#collection" class="mobile-nav-link">COLLECTION</a>
+            <a href="authentic.html" class="mobile-nav-link">AUTHENTIC</a>
+            <a href="index.html#contact" class="mobile-nav-link">CONTACT US</a>
+        </nav>
+    </div>
+</header>
 
     <!-- Quality & Authenticity -->
     <section class="qa-section">
@@ -93,7 +96,7 @@
                    7. the mailto subject line in .bag-card__link
                  ============================================================ -->
          <!-- Added inline style for scroll-margin-top so the navigation bar won't cover the image when scanned -->
-<article class="bag-card" id="DBA-2026-0001" style="scroll-margin-top: 100px;">
+<article class="bag-card reveal" id="DBA-2026-0001" style="scroll-margin-top: 100px;">
     <div class="bag-card__image-wrap">
         <!-- Publicly anchored image link -->
         <a href="#DBA-2026-0001">
@@ -144,24 +147,79 @@
 
             <!-- Copy the <article class="bag-card"> block above for every additional bag. -->
 
+            <!-- CTA: keeps the authenticity page from dead-ending —
+                 someone who just verified their bag is a hot lead. -->
+            <div style="text-align:center; margin-top: 48px;">
+                <a href="https://m.me/DBayongArt?ref=authenticity" class="hero-btn-primary" style="display:inline-flex;">
+                    Have Questions About Your Bag? Message Us
+                </a>
+            </div>
+
         </div>
     </section>
 
     <!-- Footer (identical to every other page) -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-logo">
-                <div class="footer-logo-circle">
-                    <img src="ass.png" alt="D'Bayong Art Logo" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">
-                </div>
-                <span class="footer-brand">D'Bayong Art</span>
+   <footer class="footer" id="contact">
+    <!-- Top accent border line -->
+    <div class="footer-accent-line"></div>
+
+    <div class="footer-top">
+        <div class="container footer-top-inner">
+            <!-- Navigation Links -->
+            <div class="footer-links-col">
+                <h4 class="footer-heading">Explore</h4>
+                <a href="index.html#home" class="footer-link">
+                    <span class="link-arrow">›</span> Home
+                </a>
+                <a href="aboutus.html" class="footer-link">
+                    <span class="link-arrow">›</span> About Us
+                </a>
+                <a href="index.html#collection" class="footer-link">
+                    <span class="link-arrow">›</span> Collection
+                </a>
+                <a href="authentic.html" class="footer-link">
+                    <span class="link-arrow">›</span> Authentic
+                </a>
             </div>
-            <p class="footer-description">
-                Preserving Filipino craftsmanship through beautiful handwoven Bayong bags
-            </p>
-            <p class="footer-copyright">© 2024 D'Bayong Art. All rights reserved.</p>
+
+            <!-- Contact Column with SVG Icons -->
+            <div class="footer-contact-col">
+                <h4 class="footer-heading">Get In Touch</h4>
+                
+                <a href="mailto:derickzamora36@gmail.com" class="footer-contact-item">
+                    <div class="contact-icon-wrapper">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                    </div>
+                    <span>derickzamora36@gmail.com</span>
+                </a>
+
+                <a href="https://www.facebook.com/DBayongArt" target="_blank" rel="noopener noreferrer" class="footer-contact-item">
+                    <div class="contact-icon-wrapper">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22.675 0h-21.35C.595 0 0 .592 0 1.326v21.348C0 23.408.595 24 1.325 24h11.495v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.797.143v3.24l-1.918.001c-1.504 0-1.797.715-1.797 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116C23.406 24 24 23.408 24 22.674V1.326C24 .592 23.406 0 22.675 0"/></svg>
+                    </div>
+                    <span>facebook.com/DBayongArt</span>
+                </a>
+
+                <div class="footer-contact-item">
+                    <div class="contact-icon-wrapper">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                    </div>
+                    <span class="footer-plain-text">Bacolod City, Negros Occidental</span>
+                </div>
+            </div>
         </div>
-    </footer>
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="footer-bottom">
+        <div class="container footer-bottom-inner">
+            <p class="footer-copyright">&copy; 2024 D'Bayong Art. All rights reserved.</p>
+            <p class="footer-tagline">
+                <span class="ph-flag-dot"></span> Handwoven with pride in the Philippines
+            </p>
+        </div>
+    </div>
+</footer>
 
     <!-- Mobile navigation toggle (identical to every other page) -->
     <script>
@@ -182,6 +240,26 @@
                 mobileNav.classList.remove('active');
             });
         });
+    </script>
+
+    <!-- Scroll-reveal (same behavior as index.html) -->
+    <script>
+    (function () {
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+        var targets = document.querySelectorAll('.reveal');
+        if (!targets.length) return;
+
+        var observer = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.15 });
+
+        targets.forEach(function (el) { observer.observe(el); });
+    })();
     </script>
 </body>
 </html>
